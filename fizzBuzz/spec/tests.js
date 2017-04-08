@@ -1,6 +1,3 @@
-(function(){
-
-  "use strict";
 
   describe("Fizz Buzz tests ", function() {
 
@@ -46,4 +43,3 @@
 
     });
   });
-})();
