@@ -1,29 +1,27 @@
 
-  describe("Determine if a valule", function() {
-
-    it("Is an integer value", function() {
-
-      expect(getPrimes("hello")).toBe("Invalid input value");
-
+describe("Determine if a valule", function() {
+  describe("is a positive integer", function(){
+    it('should return [] for 0', function () {
+      expect(getPrimes(0)).toEqual([]);
     });
-    it("should return `[ 1, 3, 5, 9, 15 ] if 45 is passed as a value", function() {
 
-      expect(getPrimes(45)).toBe([ 1, 3, 5, 9, 15 ]);
-
+    it('should return [2, 3, 5, 7] for 10', function () {
+      expect(getPrimes(10)).toEqual([2, 3, 5, 7]);
     });
-    it("should return `Negative value is invalid` for negative values", function() {
 
-      expect(getPrimes(-2)).toBe("Negative value is invalid");
-
-    });
-    it("should return `[]` for when 0 is passed as a value", function() {
-
-      expect(getPrimes(0)).toBe([ ]);
-
-    });
-    it("should return `[ 1, 2, 3, 5, 6, 9, 10, 15, 18, 30, 45 ]` for a value of 90", function() {
-
-      expect(getPrimes(90)).toBe([1, 2, 3, 5, 6, 9, 10, 15, 18, 30, 45]);
-
+    it('should return [2, 3, 5, 7, 11, 13, 17, 19] for 20', function () {
+      expect(getPrimes(20)).toEqual([2, 3, 5, 7, 11, 13, 17, 19]);
     });
   });
+
+  describe('Check for negative and invalid arguments', function () {
+
+    it('should return [] for -1', function () {
+      expect(getPrimes(-1)).toEqual("invalid argument");
+    });
+
+    it('should return `invalid argument` for `b`', function () {
+      expect(getPrimes('b')).toEqual('invalid argument');
+    });
+  });
+});
