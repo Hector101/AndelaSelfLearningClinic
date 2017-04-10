@@ -1,8 +1,8 @@
 function getPrimes(n){
 	//check if the argument passed is a number
-	if(isNaN(n)) {
+	if(isNaN(n) || n < 0) {
 		return "invalid argument";
-	} else if(n < 2) { 
+	} else if(n >= 0 && n < 2) { 
 		//if number is less than two return empty array
 		return [];
 	} else {
@@ -23,8 +23,7 @@ function getPrimes(n){
 	  	function checkDivisor (j) {
 	    	return i % j === 0;
 	  	}
+	  	console.log(primes)
 	  	return primes;
+	}
 }
-}
-
-getPrimes(1);
